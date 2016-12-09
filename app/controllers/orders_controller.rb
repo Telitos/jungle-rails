@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
 
     #could pass in the order id here at some point.
     #In production, the email should not be sent to the current_user but to the credit card email.
-    UserMailer.order_complete_email(@user, @order).deliver_later
+    UserMailer.order_complete_email(@order).deliver_later
   end
 
   def create

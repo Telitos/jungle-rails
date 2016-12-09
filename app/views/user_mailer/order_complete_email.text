@@ -1,4 +1,4 @@
-<%= @user.last_name %> Jungle Order Completed!
+USERNAME Jungle Order Completed!
 
       You have successfully completed your order # (oreder.id to be passed)
       To view your order details, just follow this link: <%= @url %>.
