@@ -3,7 +3,7 @@
 <section class="order-show">
 
   <header class="page-header">
-    <h1>Order #<%= @order.id%> ordered by: <%= @order.email%> </h1>
+    <h1>Order #<%= @order.id%> ordered by: <%= current_user.email%> </h1>
   </header>
 
   <div class="panel panel-default items">
@@ -19,7 +19,8 @@
       <tbody>
       <% @order_total = 0 %>
           <% @line_items.each do |line_item| %>
-          <%= render 'item', product_id: line_item.product_id, quantity: line_item.quantity %>
+          <%= render 'item', product_id: line_item.product_id, quantity: line_item.quantity, item_price:
+          line_item.item_price%>
         <% end %>
       </tbody>
       <tfoot>
