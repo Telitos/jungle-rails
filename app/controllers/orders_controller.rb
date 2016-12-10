@@ -5,17 +5,6 @@ class OrdersController < ApplicationController
     @line_items = @order.line_items
     @user = current_user
 
-    # details = []
-    # def details
-    #   @line_items.each do |item|
-    #     details << {order_id: @order, product_id: item.product_id, quantity: item.quantity, item_price: item.item_price}
-    #     byebug
-    #   end
-    # end
-
-    # details
-
-    #could pass in the order id here at some point.
     #In production, the email should not be sent to the current_user but to the credit card email.
     UserMailer.order_complete_email(@order).deliver_later
   end
