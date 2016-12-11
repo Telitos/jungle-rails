@@ -25,14 +25,15 @@
         </dl>
       </div>
     </div>
+    </article>
+</section>
+
     <% if current_user %>
-    <div id="comment-form">
-    Leave a comment:
+
+<section id="comment-form">
+  <h1>Leave a comment:</h1>
     <%= form_for [@product, @comment] do |f| %>
     <%= f.text_area :description %>
-    <br>
-    <%= f.select (:rating) do %>
-
       <span class="rating">
         <input id="rating5" type="radio" name="rating" value="5">
         <label for="rating5">5</label>
@@ -45,37 +46,37 @@
         <input id="rating1" type="radio" name="rating" value="1">
         <label for="rating1">1</label>
       </span>
-    <br>
-
     <%= f.submit value= 'Review', class: "btn btn-default" %>
     <% end %>
+</section>
     <% end %>
-    </div>
-    <% end %>
-    <br>
-   <div id="user-reviews">
+   <section id="user-reviews" class = col-md-6>
     <% if not @product.comments.length == 0 %>
       <%@product.comments.reverse_each do |comment|%>
       <div class="user-review">
-        <p class="user-name">
-          <strong> <%= User.find(comment.user_id).first_name %></strong>
-          <strong>Rating:</strong> <%= comment.rating %>
-        </p>
-        <p class="user-comment">
+        <header class="user-name-rating">
+          <span class="user-name">
+          <strong> Name:</strong>
+          </span>
+          <span class="empty-sapce">
+            <%= User.find(comment.user_id).first_name %>
+          </span>
+          <span class="user-rating">
+          <strong>Rating:</strong>
+          <%= comment.rating %>
+          </span>
+        </header>
+        <content class="user-comment">
           <%= comment.description %>
-        </p>
-        <p class="user-rating">
-
-        </p>
-          <% if current_user == User.find(comment.user_id) %>
-          <%= link_to "/products/#{@product.id}/comments/#{comment.id}", class: 'btn btn-xs btn-danger', method: :delete do %>
+        </content>
+        <footer class="delete-button">
+        <% if current_user == User.find(comment.user_id) %>
+          <%= link_to "/products/#{@product.id}/comments/#{comment.id}",  method: :delete do %>
           Delete
           <% end %>
-        <% end %>
-      </div>
+        </footer>
+        </div>
+          <% end %>
       <% end %>
     <% end %>
-   </div>
-  </article>
-
-</section>
+   </section>
