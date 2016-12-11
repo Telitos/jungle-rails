@@ -132,5 +132,33 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+##Comments
+
+prod1 = Product.find_or_create_by! id: 1
+prod2 = Product.find_or_create_by! id: 2
+prod3 = Product.find_or_create_by! id: 3
+
+
+Comment.destroy_all
+
+prod1.comments.create!({
+  user_id: 1,
+  description: 'This is a terrific product. Right?',
+  rating: 2,
+  })
+
+prod2.comments.create!({
+  user_id: 1,
+  description: "Well this didn't go as I thought it would really.",
+  rating: 3,
+  })
+
+prod2.comments.create!({
+  user_id: 2,
+  description: "This is by far the worst product I have ever come across.",
+  rating: 1,
+  })
+
+
 
 puts "DONE!"
