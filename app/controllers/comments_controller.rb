@@ -8,11 +8,11 @@ class CommentsController < ApplicationController
     @text = params[:comment][:description]
     @user = current_user.id
     @comment = Comment.new
-    rating  = params[:comment][:rating]
+    rating  = params[:rating]
 
     comment = @product.comments.new(description: @text, user_id: @user, rating: rating )
 
-
+      byebug
     if comment.save
       redirect_to product_path(@product)
     else

@@ -82,6 +82,31 @@ main section.products-show {
       max-width: 100%;
     }
   }
+
+  #user-reviews {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+
+    .user-review {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 50%;
+
+      .user-name {
+      flex-grow: 0;
+      }
+
+      .user-comment {
+      flex-grow: 2;
+      }
+       .user-rating {
+      flex-grow: 1;
+      }
+    }
+  }
 }
 
 
