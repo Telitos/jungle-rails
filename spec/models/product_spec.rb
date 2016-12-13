@@ -26,6 +26,7 @@ RSpec.describe Product, type: :model do
         price: 34.2,
         quantity: 2,
         })
+      puts(@product.errors.full_messages)
       expect(@product).to be_invalid
     end
 
@@ -38,6 +39,7 @@ RSpec.describe Product, type: :model do
         price: nil,
         quantity: 2,
         })
+      puts(@product.errors.full_messages)
       expect(@product).to be_invalid
     end
 
@@ -50,6 +52,7 @@ RSpec.describe Product, type: :model do
         price: nil,
         quantity: nil,
         })
+      puts(@product.errors.full_messages)
       expect(@product).to be_invalid
     end
 
@@ -61,7 +64,8 @@ RSpec.describe Product, type: :model do
         quantity: 2,
         category: nil
         })
-       expect(@product).to be_invalid
+      puts(@product.errors.full_messages)
+      expect(@product).to be_invalid
     end
   end
 end
