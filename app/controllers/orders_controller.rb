@@ -4,9 +4,6 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @line_items = @order.line_items
     @user = current_user
-
-    #In production, the email should not be sent to the current_user but to the credit card email.
-    UserMailer.order_complete_email(@order).deliver_later
   end
 
   def create
@@ -14,8 +11,9 @@ class OrdersController < ApplicationController
     order  = create_order(charge)
 
     if order.valid?
-
       empty_cart!
+      #In production, the email should not be sent to the current_user but to the credit card email.
+      UserMailer.order_complete_email(order).deliver_later
       redirect_to order, notice: 'Your Order has been placed.'
     else
       redirect_to cart_path, error: order.errors.full_messages.first

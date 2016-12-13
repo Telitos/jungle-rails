@@ -47,7 +47,7 @@ cat1.products.create!({
   name:  'Women\'s Zebra pants',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('apparel2.jpg'),
-  quantity: 18,
+  quantity: 0,
   price: 124.99
 })
 
@@ -132,11 +132,42 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+##Users
+
+User.create!({
+  first_name: 'Lavina',
+  last_name: 'Franklin',
+  email: 'lavina@franklin.com',
+  password: 'lavina'
+  })
+
+User.create!({
+  first_name: 'Torino',
+  last_name: 'Arcol',
+  email: 'torino@arcol.com',
+  password: 'torino'
+  })
+
+User.create!({
+  first_name: 'Narmonia',
+  last_name: 'Zornitex',
+  email: 'narmonia@zornitex.com',
+  password: 'narmonia'
+  })
+
 ##Comments
 
 prod1 = Product.find_or_create_by! id: 1
 prod2 = Product.find_or_create_by! id: 2
 prod3 = Product.find_or_create_by! id: 3
+prod4 = Product.find_or_create_by! id: 4
+prod5 = Product.find_or_create_by! id: 5
+prod6 = Product.find_or_create_by! id: 6
+prod7 = Product.find_or_create_by! id: 7
+prod8 = Product.find_or_create_by! id: 8
+prod9 = Product.find_or_create_by! id: 9
+prod10 = Product.find_or_create_by! id: 10
+prod11 = Product.find_or_create_by! id: 11
 
 
 Comment.destroy_all
@@ -144,12 +175,12 @@ Comment.destroy_all
 prod1.comments.create!({
   user_id: 1,
   description: 'This is a terrific product. Right?',
-  rating: 2,
+  rating: 5,
   })
 
 prod2.comments.create!({
   user_id: 1,
-  description: "Well this didn't go as I thought it would really.",
+  description: "Well this didn't do what I thought it would really.",
   rating: 3,
   })
 
@@ -159,6 +190,60 @@ prod2.comments.create!({
   rating: 1,
   })
 
+prod2.comments.create!({
+  user_id: 3,
+  description: "This is by far the worst product I have ever come across.",
+  rating: 1,
+  })
+
+prod4.comments.create!({
+  user_id: 2,
+  description: "This is by far the worst product I have ever come across.",
+  rating: 1,
+  })
+
+prod7.comments.create!({
+  user_id: 2,
+  description: "This is by far the worst product I have ever come across.",
+  rating: 1,
+  })
+
+prod6.comments.create!({
+  user_id: 2,
+  description: "This is by far the worst product I have ever come across.",
+  rating: 1,
+  })
+
+prod10.comments.create!({
+  user_id: 1,
+  description: "This is by far the worst product I have ever come across.",
+  rating: 4,
+  })
+prod10.comments.create!({
+  user_id: 2,
+  description: "This is by far the worst product I have ever come across.",
+  rating: 2,
+  })
+prod11.comments.create!({
+  user_id: 1,
+  description: "This is by far the worst product I have ever come across.",
+  rating: 4,
+  })
+prod7.comments.create!({
+  user_id: 3,
+  description: "This is by far the worst product I have ever come across.",
+  rating: 4,
+  })
+prod11.comments.create!({
+  user_id: 3,
+  description: "This is by far the worst product I have ever come across.",
+  rating: 5,
+  })
+prod6.comments.create!({
+  user_id: 2,
+  description: "This is by far the worst product I have ever come across.",
+  rating: 1,
+  })
 
 
 puts "DONE!"

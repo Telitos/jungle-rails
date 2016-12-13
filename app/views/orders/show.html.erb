@@ -3,7 +3,13 @@
 <section class="order-show">
 
   <header class="page-header">
-    <h1>Order #<%= @order.id%> ordered by: <%= current_user.email%> </h1>
+    <h1>Order #<%= @order.id%> Completed!</h1>
+    <% if current_user %>
+     ordered by: <%= current_user.email %>
+     <%else%>
+     You were not not logged in. I hope you provided some kind of adress. Either way, I can assure you someone will
+     benefit from your donation!
+    <% end %>
   </header>
 
   <div class="panel panel-default items">
@@ -29,7 +35,7 @@
             TOTAL:
           </th>
           <th>
-          <%= @order_total %>
+          <%= number_to_currency(@order_total) %>
           </th>
         </tr>
       </tfoot>

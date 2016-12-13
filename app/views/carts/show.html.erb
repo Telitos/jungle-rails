@@ -2,7 +2,9 @@
 
 <% if cart.length == 0 %>
 
-  <p><strong>Your cart is empty! Shop around some more and comeback for a heat check on your hipster level!<strong><p>
+  <p>
+    <strong>Your cart is empty! Shop around some more and comeback for a heat check on your hipster level!<strong>
+  </p>
   <%= link_to 'Home', root_path %>
   <%else%>
 
@@ -32,7 +34,7 @@
             TOTAL:
           </th>
           <th>
-            <%= @cart_total %>
+            <%= number_to_currency(@cart_total) %>
           </th>
         </tr>
       </tfoot>
