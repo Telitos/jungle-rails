@@ -85,6 +85,16 @@ main section.products-show {
   }
 }
 
+main section.reviews-header {
+
+  h1 {
+    font-size: 3em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+}
 
 #comment-form {
 
@@ -119,49 +129,27 @@ main section.products-show {
   .rating > input:checked + label:hover, .rating > input:checked + label:hover ~ label, .rating > input:checked ~ label:hover, .rating > input:checked ~ label:hover ~ label, .rating > label:hover ~ input:checked ~ label { color: #c59b08; }
 }
 
+
 #user-reviews {
-  width: 70%;
-  display: flex;
-  flex-direction: column;
 
   .user-review {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    width: 50%;
 
-    .user-name-rating {
-      display: flex;
-      flex-direction: row;
-      flex-order: 1;
-      flex-grow: 0;
-      padding-top: 2em;
+    .user-name {
+      color: #157EA1;
+    }
 
-        .user-name {
-        flex-grow: 1;
-        flex-order: 1;
-        }
-
-        .user-rating {
-        flex-grow: 1;
-        flex-order: 3;
-        text-align: right;
-        }
-      }
+    .user-rating {
+      text-align: right;
+      color: #0E5B75;
+    }
 
     .user-comment {
-      flex-order: 2;
-      flex-grow: 2;
-      padding-top: 0.3em;
-      padding-bottom: 0.3em;
-      }
-
-    .delete-button {
-      flex-order: 3;
-      flex-grow: 0;
+      padding-top: 0.5em;
+      padding-bottom: 2em;
       }
     }
   }
+
 
 
 

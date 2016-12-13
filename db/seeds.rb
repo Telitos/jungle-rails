@@ -157,92 +157,32 @@ User.create!({
 
 ##Comments
 
-prod1 = Product.find_or_create_by! id: 1
-prod2 = Product.find_or_create_by! id: 2
-prod3 = Product.find_or_create_by! id: 3
-prod4 = Product.find_or_create_by! id: 4
-prod5 = Product.find_or_create_by! id: 5
-prod6 = Product.find_or_create_by! id: 6
-prod7 = Product.find_or_create_by! id: 7
-prod8 = Product.find_or_create_by! id: 8
-prod9 = Product.find_or_create_by! id: 9
-prod10 = Product.find_or_create_by! id: 10
 prod11 = Product.find_or_create_by! id: 11
+prod12 = Product.find_or_create_by! id: 12
 
 
 Comment.destroy_all
 
-prod1.comments.create!({
-  user_id: 1,
-  description: 'This is a terrific product. Right?',
-  rating: 5,
-  })
 
-prod2.comments.create!({
-  user_id: 1,
-  description: "Well this didn't do what I thought it would really.",
-  rating: 3,
-  })
-
-prod2.comments.create!({
+prod12.comments.create!({
   user_id: 2,
   description: "This is by far the worst product I have ever come across.",
   rating: 1,
   })
-
-prod2.comments.create!({
+prod12.comments.create!({
   user_id: 3,
-  description: "This is by far the worst product I have ever come across.",
+  description: "The books fall off. This is false advertising. Stay away!",
   rating: 1,
   })
-
-prod4.comments.create!({
+prod11.comments.create!({
   user_id: 2,
-  description: "This is by far the worst product I have ever come across.",
+  description: "I don't even know what I'm sitting on really.",
   rating: 1,
-  })
-
-prod7.comments.create!({
-  user_id: 2,
-  description: "This is by far the worst product I have ever come across.",
-  rating: 1,
-  })
-
-prod6.comments.create!({
-  user_id: 2,
-  description: "This is by far the worst product I have ever come across.",
-  rating: 1,
-  })
-
-prod10.comments.create!({
-  user_id: 1,
-  description: "This is by far the worst product I have ever come across.",
-  rating: 4,
-  })
-prod10.comments.create!({
-  user_id: 2,
-  description: "This is by far the worst product I have ever come across.",
-  rating: 2,
   })
 prod11.comments.create!({
   user_id: 1,
-  description: "This is by far the worst product I have ever come across.",
+  description: "What is it made of? Couldn't figure it out. But it's a good icebreaker for any guest who walks in.",
   rating: 4,
-  })
-prod7.comments.create!({
-  user_id: 3,
-  description: "This is by far the worst product I have ever come across.",
-  rating: 4,
-  })
-prod11.comments.create!({
-  user_id: 3,
-  description: "This is by far the worst product I have ever come across.",
-  rating: 5,
-  })
-prod6.comments.create!({
-  user_id: 2,
-  description: "This is by far the worst product I have ever come across.",
-  rating: 1,
   })
 
 
